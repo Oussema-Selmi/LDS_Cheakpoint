@@ -1,0 +1,96 @@
+ALGORITHM Prob1Sol1
+VAR
+//   first solution      //
+    var set1 : ARRAY_OF INTEGER[];
+    var set1 : ARRAY_OF INTEGER[];
+    set1:={3;1;7;9}
+    set2:{2;4;1;9;7}
+    var SumArray = [];
+    var sum = 0;
+BEGIN
+    for (from 0 to set2.length step 1){
+        if(set1[i]!=set2[i]){
+            SumArray.push(set1[i])
+        }
+    }
+    for (let i=0;i<SumArray.length;i++){
+        sum+=SumArray[i]
+    }
+    PRINT("The sum of all distinct elements from the set is : " + sum)
+
+END
+
+//     second solution     //
+ALGORITHM Prob1Sol2
+VAR
+    var htab =HASH_TABLE<INTEGER,INTEGER>
+    var count = 1
+BEGIN
+    for (from 0 to set1.length-1 step 1){
+        htab.insert(set1[i];count)
+    }
+    ENDFOR
+    for (from 0 to set2.length-1 step 1){
+        if(htab.lookup(set2[i])===set1[i]){
+            htab.insert(set2[i];count+1)
+        }
+        else {
+            htab.insert(set2[i];count)
+        }
+    for (from 0 to htab.length-1 step 1){
+        let sum=0;
+        if(count===1){
+            sum=sum+htab[i]
+        }
+    }
+END
+
+//     second problem    //
+ALGORITHM probl2sol1
+VAR
+    var set1 : ARRAY_OF INTEGER[];
+    var set1 : ARRAY_OF INTEGER[];
+    set1:={12;13;6;10}
+    set2:{13;10;16;15}
+    var SumArray = [];
+    var sum = 0;
+BEGIN
+    for (from 0 to set2.length step 1){
+        if(set1[i]===set2[i]){
+            SumArray.push(set1[i])
+        }
+    }
+    for (let i=0;i<SumArray.length;i++){
+        sum+=SumArray[i]*2
+    }
+    PRINT("The sum of all distinct elements from the set is : " + sum)
+
+END
+
+//     second solution     //
+ALGORITHM Prob2Sol2
+VAR
+    var htab =HASH_TABLE<INTEGER,INTEGER>
+    var count = 1
+BEGIN
+    for (from 0 to set1.length-1 step 1){
+        htab.insert(set1[i];count)
+    }
+    ENDFOR
+    for (from 0 to set2.length-1 step 1){
+        if(htab.lookup(set2[i])===set1[i]){
+            htab.insert(set2[i];count+1)
+        }
+        else {
+            htab.insert(set2[i];count)
+        }
+    for (from 0 to htab.length-1 step 1){
+        let sum=0;
+        if(count===2){
+            sum=(sum+htab[i])*2
+        }
+    }
+END
+
+
+
